@@ -1,0 +1,75 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color: #ecf0f1;
+}
+
+.mainLogo{
+    width: 30%;
+    height: 20%;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+}
+
+.tagLine{
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.menu{
+    position: absolute;
+    top: 5%;
+    left: 3%;
+}
+
+.menuBullet{
+    position: relative;
+    border-radius: 50%;
+    background-color: #221F20;
+    width: 10px;
+    height: 10px;
+    left: 0%;
+    transition: left 180ms ease;
+}
+
+.menuBullet > p{
+    position: absolute;
+    left: 180%;
+    top: -185%;
+    display: none;
+    user-select: none;
+}
+
+.menuTab{
+    width: 50px;
+    height: 14px;
+    /*background-color: blue;*/
+    margin-bottom: 5px;
+}
+
+.mainFrame{
+
+}
+
+p{
+    font-family: 'Avenir', sans-serif;
+}
+
+/*FONTS*/
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/AvenirLTStd-Book.woff2') format('woff2'),
+    url('../fonts/AvenirLTStd-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
