@@ -93,3 +93,21 @@ typeWriter
     .typeString('Producteurs de contenu vidéo, d\'identité graphique, d\'objets, de décors et d\'installations.')
     .pauseFor(3000)
     .start();
+
+
+
+const container = document.querySelector('.cursor-container');
+const cursor = container.querySelector('.cursor-wrapper');
+const pointer = container.querySelector('.pointer');
+let cursorPos = { x: 0, y: 0 };
+let cursorOffset = { x: 0, y: 0 };
+
+document.addEventListener('mousemove', e => {
+    cursorPos.x = e.clientX;
+    cursorPos.y = e.clientY;
+    cursor.style.transform = `translate(${cursorPos.x + cursorOffset.x}px, ${cursorPos.y + cursorOffset.y}px)`;
+    pointer.style.transform = `translate(${cursorPos.x + cursorOffset.x}px, ${cursorPos.y + cursorOffset.y}px)`;
+    console.log(`translate(${cursorPos.x + cursorOffset.x}px, ${cursorPos.y + cursorOffset.y}px)`);
+})
+
+
