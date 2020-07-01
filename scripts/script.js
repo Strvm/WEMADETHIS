@@ -1,6 +1,9 @@
+const mainLogo = document.querySelector('.mainLogo');
 const menuBullets = [...document.querySelectorAll('.menuTab')];
+const mainFrame = document.querySelector('.mainFrame');
 let isInBullet = false;
-console.log('logs');
+let isInHomePage = true;
+let currentPage = null;
 
 menuBullets.forEach(function(item) {
     item.addEventListener('mouseover', function(event){
@@ -29,6 +32,51 @@ menuBullets.forEach(function(item) {
         bullet.children[0].style.display = 'none';
     });
 });
+
+menuBullets.forEach(function(item) {
+    item.addEventListener('click', function(event){
+        const menuName = item.children[0].children[0].innerText.toLowerCase();
+        if (currentPage != null){
+            document.querySelector(`.${currentPage}`).classList.remove('visible')
+            document.querySelector(`.${currentPage}`).classList.add('hidden')
+        }
+        switch (menuName) {
+            case 'clients':
+                document.querySelector(`.${menuName}`).classList.remove('hidden');
+                document.querySelector(`.${menuName}`).classList.add('visible');
+                break;
+            case 'biography':
+                document.querySelector(`.biographies`).classList.remove('hidden');
+                document.querySelector(`.biographies`).classList.add('visible');
+                break;
+            case 'contact':
+                document.querySelector(`.${menuName}`).classList.remove('hidden');
+                document.querySelector(`.${menuName}`).classList.add('visible');
+                break;
+        }
+        currentPage = menuName === 'biography' ? 'biographies' : menuName;
+        if (isInHomePage) {
+            mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) - 90 + 'px';
+            isInHomePage = false;
+        }
+        console.log(window.getComputedStyle(mainFrame, null).getPropertyValue("top"));
+    });
+});
+
+mainLogo.addEventListener('click', function (e) {
+    for (let elementNodeListOfElement of document.querySelectorAll('.pageSection')) {
+        if (elementNodeListOfElement.classList.contains('visible')){
+            elementNodeListOfElement.classList.remove('visible')
+            elementNodeListOfElement.classList.add('hidden')
+        }
+    }
+    if (!isInHomePage) {
+        mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) + 90 + 'px';
+        isInHomePage = true;
+    }
+});
+
+
 
 const typeWriter = new Typewriter('.tagLine', {
  //   strings: ['Producers of video content, graphic identity, objects, sets and installations.', 'Producteurs de contenu vidéo, d\'identité graphique, d\'objets, de décors et d\'installations.'],

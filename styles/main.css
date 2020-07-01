@@ -14,11 +14,12 @@ body, html{
     top: 25%;
     left: 35%;
     transform: translate(-50%, -50%);
+    user-select: none;
 }
 
 .tagLine{
     position: absolute;
-    top: 46%;
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -57,14 +58,116 @@ body, html{
 }
 
 .mainFrame{
-
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 850ms ease;
 }
 
-p{
+
+/*Clients*/
+
+.clients{
+    position: absolute;
+    top: 46%;
+    left: 10%;
+    display: flex;
+    justify-content:  space-around;
+    /*align-items: flex-start;*/
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    flex-flow: row wrap;
+    gap: 0;
+    /*flex-wrap: wrap;*/
+}
+
+
+
+.client{
+
+    margin-right: 30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: blue;
+    text-align: center;
+}
+
+
+
+/*Biography*/
+
+.biographies{
+    width: 100%;
+    position: absolute;
+    top: 53%;
+}
+
+.biographyContainer{
+    margin: 0 auto;
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.biographies p {
+    width: 40%;
+    display: inline-block;
+    margin-top: 0;
+}
+
+.joshua{
+    flex: 0 0 80%;
+}
+
+.giulia{
+    flex: 0 0 80%;
+}
+
+.socialIcon{
+    width: 30px;
+    height: 30px;
+}
+
+.socialIcon:hover{
+    filter: invert(28%) sepia(10%) saturate(6%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    transition: filter 150ms linear;
+}
+
+.socialIcon{
+    filter: initial;
+    transition: filter 1050ms linear;
+}
+
+
+.biography{
+    /*width: 300%;*/
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*Contact*/
+
+
+
+
+p, h1, h2, h3, h4, h5, h6{
     font-family: 'Avenir', sans-serif;
 }
+p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, span::selection{
+    background-color: #221F20;
+    color: #ecf0f1;
+}
 
-/*FONTS*/
+/*FONTS AND UTILS*/
 
 @font-face {
     font-family: 'Avenir';
@@ -72,4 +175,22 @@ p{
     url('../fonts/AvenirLTStd-Book.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+.hidden{
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, visibility;
+    transition-duration: 0.3s, 0s;
+    transition-delay: 0s, 0.3s;
+}
+
+.visible{
+    transition-property: visibility, opacity;
+    transition-duration: 0s, 1s;
+}
+
+
+.bold{
+    font-weight: bolder;
 }
