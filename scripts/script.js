@@ -45,7 +45,7 @@ menuBullets.forEach(function(item) {
                 document.querySelector(`.${menuName}`).classList.remove('hidden');
                 document.querySelector(`.${menuName}`).classList.add('visible');
                 break;
-            case 'biography':
+            case 'about us':
                 document.querySelector(`.biographies`).classList.remove('hidden');
                 document.querySelector(`.biographies`).classList.add('visible');
                 break;
@@ -54,12 +54,14 @@ menuBullets.forEach(function(item) {
                 document.querySelector(`.${menuName}`).classList.add('visible');
                 break;
         }
-        currentPage = menuName === 'biography' ? 'biographies' : menuName;
+        currentPage = menuName === 'about us' ? 'biographies' : menuName;
         if (isInHomePage) {
             mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) - 90 + 'px';
+            document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) - 30 + 'px';
+
+
             isInHomePage = false;
         }
-        console.log(window.getComputedStyle(mainFrame, null).getPropertyValue("top"));
     });
 });
 
@@ -72,6 +74,8 @@ mainLogo.addEventListener('click', function (e) {
     }
     if (!isInHomePage) {
         mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) + 90 + 'px';
+        document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) + 30 + 'px';
+
         isInHomePage = true;
     }
 });
@@ -79,11 +83,12 @@ mainLogo.addEventListener('click', function (e) {
 
 
 const typeWriter = new Typewriter('.tagLine', {
- //   strings: ['Producers of video content, graphic identity, objects, sets and installations.', 'Producteurs de contenu vidéo, d\'identité graphique, d\'objets, de décors et d\'installations.'],
-  //  autoStart: true,
-    delay:80,
+    //devMode: true,
+    delay:40,
     loop: true,
+    deleteSpeed: 20
 });
+
 
 typeWriter
     .pauseFor(1000)
@@ -93,8 +98,6 @@ typeWriter
     .typeString('Producteurs de contenu vidéo, d\'identité graphique, d\'objets, de décors et d\'installations.')
     .pauseFor(3000)
     .start();
-
-
 
 const container = document.querySelector('.cursor-container');
 const cursor = container.querySelector('.cursor-wrapper');
@@ -107,7 +110,6 @@ document.addEventListener('mousemove', e => {
     cursorPos.y = e.clientY;
     cursor.style.transform = `translate(${cursorPos.x + cursorOffset.x}px, ${cursorPos.y + cursorOffset.y}px)`;
     pointer.style.transform = `translate(${cursorPos.x + cursorOffset.x}px, ${cursorPos.y + cursorOffset.y}px)`;
-    console.log(`translate(${cursorPos.x + cursorOffset.x}px, ${cursorPos.y + cursorOffset.y}px)`);
 })
 
 
