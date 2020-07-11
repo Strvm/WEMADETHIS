@@ -133,7 +133,7 @@ body{
 .biographyContainer{
     margin: 0 auto;
     height: 100%;
-    width: 800px;
+    width: 60%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -263,8 +263,11 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
     }
 
     .biographyContainer {
+        width: 100%;
         flex-direction: column;
     }
+
+
 
     .Typewriter__wrapper{
         white-space: normal;
@@ -272,6 +275,7 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
     }
 
     .biographies p{
+        width: 80%;
         text-align: center;
     }
     .biographies{
