@@ -14,10 +14,14 @@ menuBullets.forEach(function(item) {
         const bullet = item.children[0];
         bullet.style.position = 'absolute';
         bullet.style.left = '14px';
+        bullet.style.width = bullet.style.height = '11px';
         bullet.children[0].style.display = 'block';
-        //bullet.children[0].setAttribute('data-aos', 'fade-right');
+        const pointer = document.querySelector('.pointer');
+        pointer.classList.remove('visible');
+        pointer.classList.add('hidden');
     });
 });
+
 
 
 menuBullets.forEach(function(item) {
@@ -27,9 +31,12 @@ menuBullets.forEach(function(item) {
         else
             isInBullet = false;
         const bullet = item.children[0];
-        bullet.style.position = 'relative';
+       bullet.style.position = 'relative';
         bullet.style.left = '0%';
-        bullet.children[0].style.display = 'none';
+        if (window.innerWidth > 600)bullet.children[0].style.display = 'none';
+        bullet.style.width = bullet.style.height = '10px';
+        document.querySelector('.pointer').classList.remove('hidden')
+        document.querySelector('.pointer').classList.add('visible')
     });
 });
 
@@ -55,6 +62,10 @@ menuBullets.forEach(function(item) {
                 break;
         }
         currentPage = menuName === 'about us' ? 'biographies' : menuName;
+        if (window.innerWidth < 600){
+            document.body.style.position = 'relative';
+            document.body.style.zIndex = '-300'
+        }
         if (isInHomePage) {
             mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) - 90 + 'px';
             document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) - 30 + 'px';
@@ -75,15 +86,23 @@ mainLogo.addEventListener('click', function (e) {
     if (!isInHomePage) {
         mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) + 90 + 'px';
         document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) + 30 + 'px';
-
+        document.body.style.position = 'fixed';
         isInHomePage = true;
     }
 });
 
 
+window.addEventListener('resize', function () {
+    if (window.innerWidth <= 600){
+        menuBullets.forEach(function(item) {
+            item.children[0].children[0].style.display = 'block';
+        });
+    }
+})
+
+
 
 const typeWriter = new Typewriter('.tagLine', {
-    //devMode: true,
     delay:40,
     loop: true,
     deleteSpeed: 20

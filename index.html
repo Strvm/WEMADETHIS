@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>we made this.</title>
+    <link rel="icon" type="image/png" href="./images/wemadethis_favicon.svg" />
     <link rel="stylesheet" href="./styles/main.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <div class="cursor-container" data-aos="fade-right" data-aos-duration="1200">
-        <div class="pointer"></div>
+        <div class="pointer visible"></div>
         <div class="cursor-wrapper">
             <div class="cursor"></div>
         </div>
@@ -33,15 +34,19 @@
     </div>
     <div class="mainFrame">
         <img src="images/wemadethis_logo.svg" alt="we made this. logo" class="mainLogo" data-aos="fade-right" data-aos-duration="1200">
-        <p class="tagLine">Producteurs de contenu vidéo, d'identité graphique, d'objets, de décors et d'installations.</p>
+        <div class="textContainer">
+            <p class="tagLine">Producteurs de contenu vidéo, d'identité graphique, d'objets, de décors et d'installations.</p>
+        </div>
     </div>
     <section class="clients pageSection hidden">
         <div class="hermes client"><img src="./images/logos/endemol.png" alt=""></div>
-        <div class="client"><img src="./images/logos/fdp.jpg" alt=""></div>
+        <div class="client"><img src="./images/logos/fdp.png" alt=""></div>
+        <div class="client"><img src="./images/logos/hermes.png" alt=""></div>
         <div class="client"><img src="./images/logos/fr2.png" alt=""></div>
         <div class="client"><img src="./images/logos/kenzo.png" alt=""></div>
-        <div class="client"><img src="./images/logos/mr.jpg" alt=""></div>
+        <div class="client"><img src="./images/logos/mr.png" alt=""></div>
         <div class="client"><img src="./images/logos/solar.png" alt=""></div>
+
 
 
 
@@ -76,7 +81,9 @@
 <!--    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init();</script>
-    <script src="./scripts/core.js"></script>
+<!--    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>-->
+
+        <script src="./scripts/core.js"></script>
     <script src="./scripts/script.js"></script>
 </body>
 </html>

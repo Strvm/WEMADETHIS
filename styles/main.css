@@ -1,4 +1,4 @@
-body, html{
+body{
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -14,7 +14,6 @@ body, html{
     top: 25%;
     left: 35%;
     transform: translate(-50%, -50%);
-    user-select: none;
     -webkit-user-drag: none;
 }
 
@@ -26,8 +25,14 @@ body, html{
     text-align: center;
     font-size: 1.2rem;
     transition: top 100ms linear;
+    overflow:auto;
 }
 
+
+
+.tagLine span{
+    display: inline;
+}
 .menu{
     position: absolute;
     top: 5%;
@@ -41,7 +46,7 @@ body, html{
     width: 10px;
     height: 10px;
     left: 0%;
-    transition: left 180ms ease;
+    transition: left 180ms ease, width 100ms ease, height 100ms ease;
     white-space: nowrap;
 }
 
@@ -68,7 +73,12 @@ body, html{
     left: 50%;
     transform: translate(-50%, -50%);
     transition: top 850ms ease;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
+}
+
+.Typewriter__wrapper{
+    white-space:nowrap;
+
 }
 
 
@@ -76,7 +86,7 @@ body, html{
 
 .clients{
     position: absolute;
-    top: 46%;
+    top: 55%;
     left: 10%;
     display: flex;
     justify-content:  space-around;
@@ -86,6 +96,8 @@ body, html{
     margin: 0 auto;
     flex-flow: row wrap;
     gap: 0;
+    user-select: none;
+    -webkit-user-drag: none;
     /*flex-wrap: wrap;*/
 }
 
@@ -112,6 +124,7 @@ body, html{
 
 .biographies{
     width: 100%;
+    margin: 0 auto;
     position: absolute;
     top: 53%;
 }
@@ -119,14 +132,14 @@ body, html{
 .biographyContainer{
     margin: 0 auto;
     height: 100%;
-    width: 70%;
+    width: 800px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 .biographies p {
-    width: 40%;
+    width: 55%;
     display: inline-block;
     margin-top: 0;
 }
@@ -210,10 +223,11 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
 
 .cursor-container{
     pointer-events: none;
+    position: absolute;
+    z-index: 100;
 }
 
 .cursor-container .pointer {
-
     width: 5pt;
     height: 5pt;
     background: #221F20;
@@ -222,7 +236,8 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
     top: -2pt;
     left: -1.6pt;
     transform: translate(705px, 316px);
-    transition: all 0.05s ease; }
+    transition: all 0.05s ease;
+}
 .cursor-container .cursor-wrapper {
     position: absolute;
     top: -7.5pt;
@@ -236,3 +251,39 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
     height: 15pt;
     border: 1pt solid #221F20;
     border-radius: 50%; }
+
+
+/*Responsiveness*/
+
+@media screen and (max-width: 600px) {
+
+    .menuBullet > p{
+        display: inline-block;
+    }
+
+    .biographyContainer {
+        flex-direction: column;
+    }
+
+    .Typewriter__wrapper{
+        white-space: normal;
+
+    }
+
+    .biographies p{
+        text-align: center;
+    }
+    .biographies{
+        left: 5%;
+    }
+
+    .biography{
+        margin-bottom: 5%;
+    }
+
+    .cursor-container{
+        display: none;
+    }
+
+    * { cursor: initial; }
+}
