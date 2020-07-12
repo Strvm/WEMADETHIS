@@ -1,10 +1,14 @@
 const mainLogo = document.querySelector('.mainLogo');
 const menuBullets = [...document.querySelectorAll('.menuTab')];
 const mainFrame = document.querySelector('.mainFrame');
+const pointer = document.querySelector('.pointer');
+const wrapper = document.querySelector('.cursor');
 let isInBullet = false;
 let isInHomePage = true;
 let currentPage = null;
 
+
+/*Hover dots*/
 menuBullets.forEach(function(item) {
     item.addEventListener('mouseover', function(event){
         if (isInBullet)
@@ -16,14 +20,14 @@ menuBullets.forEach(function(item) {
         bullet.style.left = '14px';
         bullet.style.width = bullet.style.height = '11px';
         bullet.children[0].style.display = 'block';
-        const pointer = document.querySelector('.pointer');
+        wrapper.style.height = wrapper.style.width = '22pt';
         pointer.classList.remove('visible');
         pointer.classList.add('hidden');
     });
 });
 
 
-
+/*Leave dots*/
 menuBullets.forEach(function(item) {
     item.addEventListener('mouseleave', function(event){
         if (!isInBullet)
@@ -37,8 +41,10 @@ menuBullets.forEach(function(item) {
         bullet.style.width = bullet.style.height = '10px';
         document.querySelector('.pointer').classList.remove('hidden')
         document.querySelector('.pointer').classList.add('visible')
+        wrapper.style.height = wrapper.style.width = '15pt';
     });
 });
+
 
 menuBullets.forEach(function(item) {
     item.addEventListener('click', function(event){
@@ -67,6 +73,7 @@ menuBullets.forEach(function(item) {
             document.body.style.zIndex = '-300'
         }
         if (isInHomePage) {
+            threeDcontainer.style.top = parseInt(window.getComputedStyle(threeDcontainer, null).getPropertyValue("top")) - 90 + 'px';
             mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) - 90 + 'px';
             document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) - 30 + 'px';
 
@@ -84,6 +91,7 @@ mainLogo.addEventListener('click', function (e) {
         }
     }
     if (!isInHomePage) {
+        threeDcontainer.style.top = parseInt(window.getComputedStyle(threeDcontainer, null).getPropertyValue("top")) + 90 + 'px';
         mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) + 90 + 'px';
         document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) + 30 + 'px';
         document.body.style.position = 'fixed';
@@ -91,6 +99,14 @@ mainLogo.addEventListener('click', function (e) {
     }
 });
 
+
+window.addEventListener('resize', function () {
+    if (window.innerWidth <= 600){
+        menuBullets.forEach(function(item) {
+            item.children[0].children[0].style.display = 'block';
+        });
+    }
+})
 
 window.addEventListener('resize', function () {
     if (window.innerWidth <= 600){
@@ -120,7 +136,6 @@ typeWriter
 
 const container = document.querySelector('.cursor-container');
 const cursor = container.querySelector('.cursor-wrapper');
-const pointer = container.querySelector('.pointer');
 let cursorPos = { x: 0, y: 0 };
 let cursorOffset = { x: 0, y: 0 };
 

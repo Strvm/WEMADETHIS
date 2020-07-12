@@ -9,7 +9,11 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <div class="cursor-container" data-aos="fade-right" data-aos-duration="1200">
+    <div class="threeDContainer hidden">
+        <div class="threeDTextContainer"></div>
+    </div>
+    <div class="dotFinder"></div>
+    <div class="cursor-container">
         <div class="pointer visible"></div>
         <div class="cursor-wrapper">
             <div class="cursor"></div>
@@ -78,12 +82,13 @@
 
 
 
-<!--    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init();</script>
-<!--    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>-->
-
-        <script src="./scripts/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.101.1/examples/js/controls/OrbitControls.js"></script>
+    <script src='https://rawgit.com/jeromeetienne/threex.domevents/master/threex.domevents.js'></script>
+    <script src="./scripts/core.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/threeD.js"></script>
 </body>
 </html>
