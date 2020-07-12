@@ -17,7 +17,7 @@ body{
 }
 .threeDTextContainer{
     position: absolute;
-    z-index: 500;
+    z-index: 5000;
     top: 33%;
     left: 50%;
     width: 330px;

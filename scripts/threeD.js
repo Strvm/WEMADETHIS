@@ -19,7 +19,7 @@ function init() {
     renderer.setClearColor( 0x000000, 0 );
     //scene.background = new THREE.Color( 0xecf0f1 );
     renderer.setSize(window.innerWidth, window.innerHeight);
-    controls = new THREE.OrbitControls(camera, document.body);
+    controls = new THREE.OrbitControls(camera, document.querySelector('.mainFrame'));
     controls.enableKeys = controls.enableZoom = controls.enablePan = false;
 
 
@@ -72,6 +72,8 @@ document.querySelector(('.mainFrame')).addEventListener('click',function(event) 
         is3d = false;
     }
 })
+
+
 
 window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
