@@ -35,19 +35,15 @@ function init() {
             height: 0.1,
             curveSegments: 4,
             bevelEnabled: true,
-            bevelThickness: 0.05,
-            bevelSize: 0.01,
+            bevelThickness: 0,
+            bevelSize: 0,
             bevelSegments: 3
         });
         textGeometry.center();
         const material = new THREE.MeshPhongMaterial({color: 0x231F20});
         textMesh = new THREE.Mesh(textGeometry, material);
-        textMesh.position.y = textMesh.position.y + 1.15;
+        textMesh.position.y = textMesh.position.y + 1.2;
         scene.add(textMesh);
-        // domEvents.addEventListener(textMesh, 'click', function(event){
-        //     homepage();
-        // }, false)
-
     });
 }
 
@@ -60,13 +56,20 @@ function animate() {
 }
 
 
-logo.addEventListener('click',function(event) {
+document.querySelector(('.mainFrame')).addEventListener('click',function(event) {
     if (isShifting && !is3d){
         logo.classList.add('hidden');
         threeDcontainer.classList.remove('hidden');
         threeDcontainer.classList.add('visible');
         controls.reset();
         is3d = true;
+    }else if (isShifting && is3d){
+        logo.classList.remove('hidden');
+        logo.classList.add('visible');
+        threeDcontainer.classList.remove('visible');
+        threeDcontainer.classList.add('hidden');
+        controls.reset();
+        is3d = false;
     }
 })
 
@@ -84,8 +87,6 @@ document.addEventListener('keyup', function(e) {
     if (e.key === 'Shift')isShifting = false;
 })
 
-document.querySelector('.threeDTextContainer').addEventListener('click', function(e) {
-    homepage();
-})
+
 init();
 animate();

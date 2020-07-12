@@ -1,4 +1,4 @@
-const mainLogo = document.querySelector('.mainLogo');
+const mainLogo = document.querySelector('.mainFrame');
 const menuBullets = [...document.querySelectorAll('.menuTab')];
 const mainFrame = document.querySelector('.mainFrame');
 const pointer = document.querySelector('.pointer');
@@ -45,43 +45,41 @@ menuBullets.forEach(function(item) {
     });
 });
 
-
-menuBullets.forEach(function(item) {
-    item.addEventListener('click', function(event){
-        const menuName = item.children[0].children[0].innerText.toLowerCase();
-        if (currentPage != null){
-            document.querySelector(`.${currentPage}`).classList.remove('visible')
-            document.querySelector(`.${currentPage}`).classList.add('hidden')
-        }
-        switch (menuName) {
-            case 'clients':
-                document.querySelector(`.${menuName}`).classList.remove('hidden');
-                document.querySelector(`.${menuName}`).classList.add('visible');
-                break;
-            case 'about us':
-                document.querySelector(`.biographies`).classList.remove('hidden');
-                document.querySelector(`.biographies`).classList.add('visible');
-                break;
-            case 'contact':
-                document.querySelector(`.${menuName}`).classList.remove('hidden');
-                document.querySelector(`.${menuName}`).classList.add('visible');
-                break;
-        }
-        currentPage = menuName === 'about us' ? 'biographies' : menuName;
-        if (window.innerWidth < 600){
-            document.body.style.position = 'relative';
-            document.body.style.zIndex = '-300'
-        }
-        if (isInHomePage) {
-            threeDcontainer.style.top = parseInt(window.getComputedStyle(threeDcontainer, null).getPropertyValue("top")) - 90 + 'px';
-            mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) - 90 + 'px';
-            document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) - 30 + 'px';
-
-
-            isInHomePage = false;
-        }
+    menuBullets.forEach(function (item) {
+        item.addEventListener('click', function (event) {
+            const menuName = item.children[0].children[0].innerText.toLowerCase();
+            if (currentPage != null) {
+                document.querySelector(`.${currentPage}`).classList.remove('visible')
+                document.querySelector(`.${currentPage}`).classList.add('hidden')
+            }
+            switch (menuName) {
+                case 'clients':
+                    document.querySelector(`.${menuName}`).classList.remove('hidden');
+                    document.querySelector(`.${menuName}`).classList.add('visible');
+                    break;
+                case 'about us':
+                    document.querySelector(`.biographies`).classList.remove('hidden');
+                    document.querySelector(`.biographies`).classList.add('visible');
+                    break;
+                case 'contact':
+                    document.querySelector(`.${menuName}`).classList.remove('hidden');
+                    document.querySelector(`.${menuName}`).classList.add('visible');
+                    break;
+            }
+            currentPage = menuName === 'about us' ? 'biographies' : menuName;
+            if (window.innerWidth < 600) {
+                document.body.style.position = 'relative';
+                document.body.style.zIndex = '-300'
+            }
+            if (isInHomePage) {
+                threeDcontainer.style.top = parseInt(window.getComputedStyle(threeDcontainer, null).getPropertyValue("top")) - 90 + 'px';
+                mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) - 90 + 'px';
+                document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) - 30 + 'px';
+                isInHomePage = false;
+            }
+        });
     });
-});
+
 
 mainLogo.addEventListener('click', function (e) {
     for (let elementNodeListOfElement of document.querySelectorAll('.pageSection')) {
@@ -145,5 +143,6 @@ document.addEventListener('mousemove', e => {
     cursor.style.transform = `translate(${cursorPos.x + cursorOffset.x}px, ${cursorPos.y + cursorOffset.y}px)`;
     pointer.style.transform = `translate(${cursorPos.x + cursorOffset.x}px, ${cursorPos.y + cursorOffset.y}px)`;
 })
+
 
 
