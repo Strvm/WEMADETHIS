@@ -66,6 +66,13 @@ menuBullets.forEach(function(item) {
                     document.querySelector(`.${menuName}`).classList.add('visible');
                     break;
             }
+            for (let menuBullet of menuBullets) {
+                if (menuBullet !== item)
+                    menuBullet.style.opacity = '0.5';
+                else
+                    menuBullet.style.opacity = '1';
+
+            }
             currentPage = menuName === 'about us' ? 'biographies' : menuName;
             if (window.innerWidth < 600) {
                 document.body.style.position = 'relative';
@@ -94,6 +101,9 @@ mainLogo.addEventListener('click', function (e) {
         document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) + 30 + 'px';
         document.body.style.position = 'fixed';
         isInHomePage = true;
+    }
+    for (let menuBullet of menuBullets) {
+            menuBullet.style.opacity = '1';
     }
 });
 
@@ -125,10 +135,10 @@ const typeWriter = new Typewriter('.tagLine', {
 
 typeWriter
     .pauseFor(1000)
-    .typeString('Producers of video content, graphic identity, objects, sets and installations.')
+    .typeString('Art direction and production of video content, graphics, objects, sets, and installations.')
     .pauseFor(3000)
     .deleteAll()
-    .typeString('Producteurs de contenu vidéo, d\'identité graphique, d\'objets, de décors et d\'installations.')
+    .typeString('Direction artistique et production de vidéos, de contenus graphiques, d\'objets, de décors, et d\'installations.')
     .pauseFor(3000)
     .start();
 
