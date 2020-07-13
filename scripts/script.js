@@ -81,7 +81,8 @@ menuBullets.forEach(function(item) {
             if (isInHomePage) {
                 threeDcontainer.style.top = parseInt(window.getComputedStyle(threeDcontainer, null).getPropertyValue("top")) - 90 + 'px';
                 mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) - 90 + 'px';
-                document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) - 30 + 'px';
+               // document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) - 30 + 'px';
+                document.querySelector('.tagLine').classList.add('hidden');
                 isInHomePage = false;
             }
         });
@@ -98,7 +99,9 @@ mainLogo.addEventListener('click', function (e) {
     if (!isInHomePage) {
         threeDcontainer.style.top = parseInt(window.getComputedStyle(threeDcontainer, null).getPropertyValue("top")) + 90 + 'px';
         mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) + 90 + 'px';
-        document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) + 30 + 'px';
+        //document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) + 30 + 'px';
+        document.querySelector('.tagLine').classList.remove('hidden');
+        document.querySelector('.tagLine').classList.add('visible');
         document.body.style.position = 'fixed';
         isInHomePage = true;
     }

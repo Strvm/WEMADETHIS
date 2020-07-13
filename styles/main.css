@@ -105,7 +105,7 @@ body{
 
 .clients{
     position: absolute;
-    top: 55%;
+    top: 45%;
     left: 13%;
     display: flex;
     flex-wrap: wrap;
