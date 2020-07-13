@@ -3,7 +3,7 @@ body{
     padding: 0;
     height: 100vh;
     width: 100vw;
-    /*position: fixed;*/
+    position: fixed;
     /*background-color: #ecf0f1;*/
     overflow-x: hidden;
 }
