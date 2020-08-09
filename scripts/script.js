@@ -90,6 +90,7 @@ menuBullets.forEach(function(item) {
 
 
 mainLogo.addEventListener('click', function (e) {
+    if (isShifting)return;
     for (let elementNodeListOfElement of document.querySelectorAll('.pageSection')) {
         if (elementNodeListOfElement.classList.contains('visible')){
             elementNodeListOfElement.classList.remove('visible')

@@ -60,7 +60,7 @@ CREDITS
 
         // Remove dead particles
         for( let i = particles.length -1; i >= 0; i-- ) {
-            if( particles[i].lifeSpan < 0 ) {
+            if( particles[i].lifeSpan < 50 ) {
                 particles[i].die();
                 particles.splice(i, 1);
             }
@@ -86,7 +86,7 @@ CREDITS
             "display": "block",
             "pointerEvents": "none",
             "z-index": "10000000",
-            "fontSize": "16px",
+            "font-size": "16px",
             "will-change": "transform"
         };
 
@@ -103,6 +103,7 @@ CREDITS
 
             this.element = document.createElement('span');
             this.element.innerHTML = this.character;
+            this.element.style.fontSize = '90px'
             applyProperties(this.element, this.initialStyles);
             this.update();
 
