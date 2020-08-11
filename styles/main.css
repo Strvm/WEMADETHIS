@@ -74,13 +74,14 @@ body {
 }
 
 .tagLine {
+  color: initial;
   position: absolute;
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   font-size: 1.2rem;
-  transition: top 100ms linear;
+  transition: top 100ms linear, color 0.001ms linear;
   overflow: auto;
 }
 

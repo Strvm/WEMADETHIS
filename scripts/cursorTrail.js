@@ -5,7 +5,8 @@ CREDITS
 
 (function fairyDustCursor() {
 
-    const possibleColors = ["#ffc1cc"];
+    // const possibleColors = ["#ffc1cc"];
+    const possibleColors = ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#8B00FF"];
     let width = window.innerWidth;
     let height = window.innerHeight;
     const cursor = {x: width / 2, y: width / 2};
@@ -41,7 +42,8 @@ CREDITS
     function onMouseMove(e) {
         cursor.x = e.clientX;
         cursor.y = e.clientY;
-
+        //possibleColors[0] = "#" + e.clientX.toString(16) + e.clientY.toString(16);
+        //document.querySelector('.tagLine').style.color = possibleColors[0];
         addParticle( cursor.x, cursor.y, possibleColors[Math.floor(Math.random()*possibleColors.length)]);
     }
 
