@@ -3,14 +3,17 @@
 * { cursor: none; }
 
 
+@mixin size($width, $height){
+  width: $width; height: $height;
+}
+
 .cursor-container{
   pointer-events: none;
   position: absolute;
   z-index: 100;
 
   .pointer {
-    width: 5pt;
-    height: 5pt;
+    @include size(5pt, 5pt);
     background: #ffc1cc;
     border-radius: 50%;
     position: absolute;
@@ -24,13 +27,11 @@
       top: -7.5pt;
       left: -7.5pt;
       transform: translate(705px, 316px);
-      width: 15pt;
-      height: 15pt;
+      @include size(15pt, 15pt);
       transition: all 0.1s ease;
 
       .cursor {
-        width: 15pt;
-        height: 15pt;
+        @include size(15pt, 15pt);
         border: 1pt solid variables.$darkBgColor;
         border-radius: 50%;
         transition: all 150ms linear;
@@ -40,4 +41,3 @@
 
 
 }
-
