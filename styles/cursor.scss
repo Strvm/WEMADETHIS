@@ -1,6 +1,6 @@
 @use "variables";
 
-* { cursor: none; }
+//* { cursor: none; }
 
 
 @mixin size($width, $height){
@@ -32,7 +32,7 @@
 
       .cursor {
         @include size(15pt, 15pt);
-        border: 1pt solid variables.$darkBgColor;
+        border: 1pt solid pink;
         border-radius: 50%;
         transition: all 150ms linear;
       }

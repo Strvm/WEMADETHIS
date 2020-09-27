@@ -1,4 +1,4 @@
-const mainLogo = document.querySelector('.mainFrame');
+const mainLogo = document.querySelector('.mainLogo');
 const menuBullets = [...document.querySelectorAll('.menuTab')];
 const mainFrame = document.querySelector('.mainFrame');
 const pointer = document.querySelector('.pointer');
@@ -21,8 +21,8 @@ menuBullets.forEach(function(item) {
         bullet.style.width = bullet.style.height = '11px';
         bullet.children[0].style.display = 'block';
         wrapper.style.height = wrapper.style.width = '22pt';
-        pointer.classList.remove('visible');
-        pointer.classList.add('hidden');
+        //pointer.classList.remove('visible');
+        //pointer.classList.add('hidden');
     });
 });
 
@@ -39,8 +39,8 @@ menuBullets.forEach(function(item) {
         bullet.style.left = '0%';
         if (window.innerWidth > 600)bullet.children[0].style.display = 'none';
         bullet.style.width = bullet.style.height = '10px';
-        document.querySelector('.pointer').classList.remove('hidden')
-        document.querySelector('.pointer').classList.add('visible')
+        //document.querySelector('.pointer').classList.remove('hidden')
+        //document.querySelector('.pointer').classList.add('visible')
         wrapper.style.height = wrapper.style.width = '15pt';
     });
 });
@@ -49,21 +49,25 @@ menuBullets.forEach(function(item) {
         item.addEventListener('click', function (event) {
             const menuName = item.children[0].children[0].innerText.toLowerCase();
             if (currentPage != null) {
+                console.log(currentPage);
                 document.querySelector(`.${currentPage}`).classList.remove('visible')
                 document.querySelector(`.${currentPage}`).classList.add('hidden')
             }
             switch (menuName) {
-                case 'clients':
-                    document.querySelector(`.${menuName}`).classList.remove('hidden');
-                    document.querySelector(`.${menuName}`).classList.add('visible');
+                case 'our clients':
+                    document.querySelector('.clients').classList.remove('hidden');
+                    document.querySelector('.clients').classList.add('visible');
+                    currentPage = 'clients';
                     break;
                 case 'about us':
                     document.querySelector(`.biographies`).classList.remove('hidden');
                     document.querySelector(`.biographies`).classList.add('visible');
+                    currentPage = 'biographies';
                     break;
                 case 'contact':
                     document.querySelector(`.${menuName}`).classList.remove('hidden');
                     document.querySelector(`.${menuName}`).classList.add('visible');
+                    currentPage = 'contact';
                     break;
             }
             for (let menuBullet of menuBullets) {
@@ -73,7 +77,6 @@ menuBullets.forEach(function(item) {
                     menuBullet.style.opacity = '1';
 
             }
-            currentPage = menuName === 'about us' ? 'biographies' : menuName;
             if (window.innerWidth < 600) {
                 document.body.style.position = 'relative';
                 document.body.style.zIndex = '-300'
@@ -97,6 +100,7 @@ mainLogo.addEventListener('click', function (e) {
             elementNodeListOfElement.classList.add('hidden')
         }
     }
+    console.log("CLICK");
     if (!isInHomePage) {
         threeDcontainer.style.top = parseInt(window.getComputedStyle(threeDcontainer, null).getPropertyValue("top")) + 90 + 'px';
         mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) + 90 + 'px';
@@ -108,6 +112,7 @@ mainLogo.addEventListener('click', function (e) {
     }
     for (let menuBullet of menuBullets) {
             menuBullet.style.opacity = '1';
+            menuBullet.classList.add("visible");
     }
 });
 
@@ -131,9 +136,9 @@ window.addEventListener('resize', function () {
 
 
 const typeWriter = new Typewriter('.tagLine', {
-    delay:40,
+    delay:30,
     loop: true,
-    deleteSpeed: 20
+    deleteSpeed: 1
 });
 
 
@@ -141,7 +146,7 @@ typeWriter
     .pauseFor(1000)
     .typeString('Art direction and production of video content, graphics, objects, sets, and installations.')
     .pauseFor(3000)
-    .deleteAll()
+    .deleteAll(1)
     .typeString('Direction artistique et production de vidéos, de contenus graphiques, d\'objets, de décors, et d\'installations.')
     .pauseFor(3000)
     .start();
@@ -155,8 +160,29 @@ document.addEventListener('mousemove', e => {
     cursorPos.x = e.clientX;
     cursorPos.y = e.clientY;
     cursor.style.transform = `translate(${cursorPos.x + cursorOffset.x}px, ${cursorPos.y + cursorOffset.y}px)`;
-    pointer.style.transform = `translate(${cursorPos.x + cursorOffset.x}px, ${cursorPos.y + cursorOffset.y}px)`;
+    //pointer.style.transform = `translate(${cursorPos.x + cursorOffset.x}px, ${cursorPos.y + cursorOffset.y}px)`;
 })
+
+
+// init Swiper:
+var swiper = new Swiper('.swiper-container', {
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+    },
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+});
+
+
 
 
 

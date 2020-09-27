@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>we made this.</title>
     <link rel="icon" type="image/png" href="./images/wemadethis_favicon.svg" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./styles/main.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
 </head>
 <body>
     <div class="container"></div>
@@ -15,7 +18,7 @@
     </div>
     <div class="dotFinder"></div>
     <div class="cursor-container">
-        <div class="pointer visible"></div>
+<!--        <div class="pointer visible"></div>-->
         <div class="cursor-wrapper">
             <div class="cursor"></div>
         </div>
@@ -23,12 +26,12 @@
     <div class="menu" data-aos="zoom-in" data-aos-duration="1200">
         <div class="menuTab">
             <div class="menuBullet">
-                <p data-aos="zoom-in" data-aos-duration="1200">About us</p>
+                <p>Our Clients</p>
             </div>
         </div>
         <div class="menuTab">
             <div class="menuBullet">
-                <p>Clients</p>
+                <p data-aos="zoom-in" data-aos-duration="1200">About us</p>
             </div>
         </div>
         <div class="menuTab">
@@ -44,15 +47,45 @@
         </div>
     </div>
     <section class="clients pageSection hidden">
-        <div class="hermes client"><img src="./images/logos/endemol.png" alt=""></div>
-        <div class="client"><img src="./images/logos/fdp.png" alt=""></div>
-        <div class="client"><img src="./images/logos/hermes.png" alt=""></div>
-        <div class="client france2"><img src="./images/logos/fr2.png" alt=""></div>
-        <div class="client"><img src="./images/logos/kenzo.png" alt=""></div>
-        <div class="client"><img src="./images/logos/mr.png" alt=""></div>
-        <div class="client"><img src="./images/logos/solar.png" alt=""></div>
-        <div class="client"><img src="./images/logos/cahu.png" alt=""></div>
-        <div class="client"><img src="./images/logos/gp.png" alt=""></div>
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><div class="hermes client"><img src="./images/logos/endemol.png" alt=""></div></div>
+                <div class="swiper-slide"><div class="client"><img src="./images/logos/fdp.png" alt=""></div></div>
+                <div class="swiper-slide"><div class="client"><img src="./images/logos/hermes.png" alt=""></div></div>
+                <div class="swiper-slide"><div class="client france2"><img src="./images/logos/fr2.png" alt=""></div></div>
+                <div class="swiper-slide"><div class="client"><img src="./images/logos/kenzo.png" alt=""></div></div>
+                <div class="swiper-slide"><div class="client"><img src="./images/logos/mr.png" alt=""></div></div>
+                <div class="swiper-slide"><div class="client"><img src="./images/logos/solar.png" alt=""></div></div>
+                <div class="swiper-slide"><div class="client"><img src="./images/logos/cahu.png" alt=""></div></div>
+                <div class="swiper-slide"><div class="client"><img src="./images/logos/gp.png" alt=""></div></div>
+
+
+
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+<!--            <div class="swiper-scrollbar"></div>-->
+        </div>
+
+
+<!--        <div class="hermes client"><img src="./images/logos/endemol.png" alt=""></div>-->
+<!--        <div class="client"><img src="./images/logos/fdp.png" alt=""></div>-->
+<!--        <div class="client"><img src="./images/logos/hermes.png" alt=""></div>-->
+<!--        <div class="client france2"><img src="./images/logos/fr2.png" alt=""></div>-->
+<!--        <div class="client"><img src="./images/logos/kenzo.png" alt=""></div>-->
+<!--        <div class="client"><img src="./images/logos/mr.png" alt=""></div>-->
+<!--        <div class="client"><img src="./images/logos/solar.png" alt=""></div>-->
+<!--        <div class="client"><img src="./images/logos/cahu.png" alt=""></div>-->
+<!--        <div class="client"><img src="./images/logos/gp.png" alt=""></div>-->
     </section>
     <section class="biographies pageSection hidden">
         <div class="biographyContainer">
@@ -87,8 +120,10 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.101.1/examples/js/controls/OrbitControls.js"></script>
     <script src='https://rawgit.com/jeromeetienne/threex.domevents/master/threex.domevents.js'></script>
     <script src="./scripts/core.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/threeD.js"></script>
     <script src="./scripts/cursorTrail.js"></script>
+
 </body>
 </html>

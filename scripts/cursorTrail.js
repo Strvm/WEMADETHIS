@@ -3,6 +3,7 @@ CREDITS
  * -- https://github.com/tholman/90s-cursor-effects
  */
 
+
 (function fairyDustCursor() {
 
     // const possibleColors = ["#ffc1cc"];
@@ -78,10 +79,12 @@ CREDITS
     /**
      * Particles
      */
-
+    let wowIndex = 0;
+    let wow = false;
     function Particle() {
 
-        this.character = "w.";
+        // this.character = "wow";
+        this.character = ["w", "o", "w"];
         this.lifeSpan = 90; //ms
         this.initialStyles ={
             "position": "absolute",
@@ -104,7 +107,18 @@ CREDITS
             this.initialStyles.color = color;
 
             this.element = document.createElement('span');
-            this.element.innerHTML = this.character;
+            if (wowIndex === 3)wowIndex = 0;
+            this.element.innerHTML = this.character[wowIndex]
+            wowIndex++;
+            // if (!wow) {
+            //     this.element.innerHTML = this.character[1]
+            //     wow = true;
+            // }else {
+            //     this.element.innerHTML = this.character[0]
+            //
+            //     wow = false;
+            // }
+                    //this.element.innerHTML = this.character;
             this.element.style.fontSize = '90px'
             applyProperties(this.element, this.initialStyles);
             this.update();

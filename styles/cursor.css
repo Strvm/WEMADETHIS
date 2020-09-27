@@ -1,7 +1,3 @@
-* {
-  cursor: none;
-}
-
 .cursor-container {
   pointer-events: none;
   position: absolute;
@@ -30,7 +26,7 @@
 .cursor-container .cursor-wrapper .cursor {
   width: 15pt;
   height: 15pt;
-  border: 1pt solid #221F20;
+  border: 1pt solid pink;
   border-radius: 50%;
   transition: all 150ms linear;
 }
