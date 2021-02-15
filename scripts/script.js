@@ -77,6 +77,7 @@ menuBullets.forEach(function(item) {
                     menuBullet.style.opacity = '1';
 
             }
+            
             if (window.innerWidth < 600) {
                 document.body.style.position = 'relative';
                 document.body.style.zIndex = '-300'
@@ -100,7 +101,6 @@ mainLogo.addEventListener('click', function (e) {
             elementNodeListOfElement.classList.add('hidden')
         }
     }
-    console.log("CLICK");
     if (!isInHomePage) {
         threeDcontainer.style.top = parseInt(window.getComputedStyle(threeDcontainer, null).getPropertyValue("top")) + 90 + 'px';
         mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) + 90 + 'px';
@@ -165,7 +165,7 @@ document.addEventListener('mousemove', e => {
 
 
 // init Swiper:
-var swiper = new Swiper('.swiper-container', {
+let swiper = new Swiper('.swiper-container', {
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
