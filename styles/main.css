@@ -14,22 +14,6 @@
   transform: translate(705px, 316px);
   transition: all 0.05s ease;
 }
-.cursor-container .cursor-wrapper {
-  position: absolute;
-  top: -7.5pt;
-  left: -7.5pt;
-  transform: translate(705px, 316px);
-  width: 15pt;
-  height: 15pt;
-  transition: all 0.1s ease;
-}
-.cursor-container .cursor-wrapper .cursor {
-  width: 15pt;
-  height: 15pt;
-  border: 1pt solid pink;
-  border-radius: 50%;
-  transition: all 150ms linear;
-}
 
 .threeDContainer {
   position: absolute;
@@ -85,7 +69,7 @@ body {
 }
 
 .swiper-button-prev, .swiper-button-next {
-  color: pink;
+  color: black;
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
@@ -173,7 +157,7 @@ body {
 .clients {
   position: absolute;
   top: 45%;
-  left: 13%;
+  left: 10%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -196,16 +180,16 @@ body {
 .client {
   margin-top: 40px;
   margin-right: 30px;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   /*border-radius: 50%;*/
   /*background-color: blue;*/
   text-align: center;
 }
 
 .france2 {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }
 
 /*Biography*/
@@ -213,7 +197,7 @@ body {
   width: 90%;
   margin: 0 auto;
   position: absolute;
-  top: 53%;
+  top: 43%;
 }
 .biographies p {
   width: 55%;
@@ -230,12 +214,27 @@ body {
   justify-content: space-between;
 }
 
+.giuliaBioImage {
+  width: 300px;
+  height: 225px;
+}
+
+.joshuaBioImage {
+  width: 220px;
+  height: 225px;
+}
+
 .joshua {
   flex: 0 0 80%;
 }
 
 .giulia {
   flex: 0 0 80%;
+}
+
+.socials {
+  display: block;
+  height: 90px;
 }
 
 .socialIcon {
@@ -257,6 +256,10 @@ body {
   /*width: 300%;*/
   display: flex;
   flex-direction: column;
+}
+
+.biography p {
+  font-size: 15px;
 }
 
 /*Contact*/

@@ -6,7 +6,7 @@ const wrapper = document.querySelector('.cursor');
 let isInBullet = false;
 let isInHomePage = true;
 let currentPage = null;
-
+let swiperInit = false;
 
 /*Hover dots*/
 menuBullets.forEach(function(item) {
@@ -17,8 +17,8 @@ menuBullets.forEach(function(item) {
             isInBullet = true;
         const bullet = item.children[0];
         bullet.style.position = 'absolute';
-        bullet.style.left = '14px';
-        bullet.style.width = bullet.style.height = '11px';
+        //bullet.style.left = '14px';
+        bullet.style.width = bullet.style.height = '12px';
         bullet.children[0].style.display = 'block';
         wrapper.style.height = wrapper.style.width = '22pt';
         //pointer.classList.remove('visible');
@@ -36,7 +36,7 @@ menuBullets.forEach(function(item) {
             isInBullet = false;
         const bullet = item.children[0];
        bullet.style.position = 'relative';
-        bullet.style.left = '0%';
+        //bullet.style.left = '0%';
         if (window.innerWidth > 600)bullet.children[0].style.display = 'none';
         bullet.style.width = bullet.style.height = '10px';
         //document.querySelector('.pointer').classList.remove('hidden')
@@ -53,11 +53,32 @@ menuBullets.forEach(function(item) {
                 document.querySelector(`.${currentPage}`).classList.remove('visible')
                 document.querySelector(`.${currentPage}`).classList.add('hidden')
             }
+
             switch (menuName) {
-                case 'our clients':
+                case 'clients':
                     document.querySelector('.clients').classList.remove('hidden');
                     document.querySelector('.clients').classList.add('visible');
                     currentPage = 'clients';
+                    if (!swiperInit){
+                        // init Swiper:
+                        let swiper = new Swiper('.swiper-container', {
+                            navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+
+                            },
+                            pagination: {
+                                el: '.swiper-pagination',
+                                clickable: true,
+                                dynamicBullets: true,
+                            },
+                            autoplay: {
+                                delay: 2500,
+                                disableOnInteraction: false,
+                            },
+                        });
+                        swiperInit = true;
+                    }
                     break;
                 case 'about us':
                     document.querySelector(`.biographies`).classList.remove('hidden');
@@ -164,23 +185,7 @@ document.addEventListener('mousemove', e => {
 })
 
 
-// init Swiper:
-let swiper = new Swiper('.swiper-container', {
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
 
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
-    },
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-});
 
 
 

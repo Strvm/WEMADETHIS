@@ -4,6 +4,8 @@ CREDITS
  */
 
 
+
+
 (function fairyDustCursor() {
 
     // const possibleColors = ["#ffc1cc"];
@@ -17,7 +19,14 @@ CREDITS
         bindEvents();
         loop();
     }
+    let disableParticles = false;
+    document.querySelector(".menu").addEventListener('mouseover', function (event){
+        disableParticles = true;
+    })
 
+    document.querySelector(".menu").addEventListener('mouseleave', function (event){
+        disableParticles = false;
+    })
     // Bind events that are needed
     function bindEvents() {
         document.addEventListener('mousemove', onMouseMove);
@@ -41,6 +50,7 @@ CREDITS
     }
 
     function onMouseMove(e) {
+        if (disableParticles)return;
         cursor.x = e.clientX;
         cursor.y = e.clientY;
         //possibleColors[0] = "#" + e.clientX.toString(16) + e.clientY.toString(16);
