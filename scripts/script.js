@@ -104,8 +104,15 @@ menuBullets.forEach(function(item) {
                 document.body.style.zIndex = '-300'
             }
             if (isInHomePage) {
-                threeDcontainer.style.top = parseInt(window.getComputedStyle(threeDcontainer, null).getPropertyValue("top")) - 90 + 'px';
-                mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) - 90 + 'px';
+                threeDcontainer.style.top = parseInt(window.getComputedStyle(threeDcontainer, null).getPropertyValue("top")) - 190 + 'px';
+                mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) - 190 + 'px';
+                mainFrame.style.zIndex = '100';
+                mainFrame.style.width = '50%';
+                mainFrame.style.height = '50%';
+                mainLogo.style.width = "50%";
+                mainLogo.style.height = "30%";
+                mainLogo.style.top = "9.5%";
+                mainLogo.style.left = "24%";
                // document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) - 30 + 'px';
                 document.querySelector('.tagLine').classList.add('hidden');
                 isInHomePage = false;
@@ -123,8 +130,8 @@ mainLogo.addEventListener('click', function (e) {
         }
     }
     if (!isInHomePage) {
-        threeDcontainer.style.top = parseInt(window.getComputedStyle(threeDcontainer, null).getPropertyValue("top")) + 90 + 'px';
-        mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) + 90 + 'px';
+        threeDcontainer.style.top = parseInt(window.getComputedStyle(threeDcontainer, null).getPropertyValue("top")) + 190 + 'px';
+        mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) + 190 + 'px';
         //document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) + 30 + 'px';
         document.querySelector('.tagLine').classList.remove('hidden');
         document.querySelector('.tagLine').classList.add('visible');

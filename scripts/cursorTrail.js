@@ -9,7 +9,8 @@ CREDITS
 (function fairyDustCursor() {
 
     // const possibleColors = ["#ffc1cc"];
-    const possibleColors = ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#8B00FF"];
+    // const possibleColors = ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#8B00FF"];
+    const possibleColors = ["#fd79a8"];
     let width = window.innerWidth;
     let height = window.innerHeight;
     const cursor = {x: width / 2, y: width / 2};

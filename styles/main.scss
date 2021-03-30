@@ -8,12 +8,12 @@ body{
   padding: 0;
   height: 100vh;
   width: 100vw;
-  //position: fixed;
-  //overflow-x: hidden;
+  position: fixed;
+  overflow-x: hidden;
 }
 .swiper-container {
   width: 100%;
-  height: 130%;
+  height: 350%;
   background-color: #221F20;
 }
 
@@ -48,13 +48,25 @@ body{
   background-color: pink;
 }
 
+//.mainLogo{
+//  width: 50%;
+//  height: 30%;
+//  position: absolute;
+//  top: 9.5%;
+//  left: 24%;
+//  transform: translate(-50%, -50%);
+//  -webkit-user-drag: none;
+//  z-index: 100;
+//}
+
 .mainLogo{
-  width: 30%;
-  height: 20%;
+  width: 60%;
+  height: 40%;
   position: absolute;
-  top: 25%;
-  left: 35%;
+  top: 12.5%;
+  left: 17.5%;
   transform: translate(-50%, -50%);
+  transition: width 800ms, height 800ms linear;
   -webkit-user-drag: none;
 }
 
@@ -106,16 +118,28 @@ body{
 }
 
 .mainFrame{
-  z-index: -1;
+ // z-index: 100;
   position: absolute;
-  height: 100%;
-  width: 100%;
+  height: 50%;
+  width: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: top 850ms ease;
   /*white-space: nowrap;*/
 }
+//
+//.mainFrame{
+//  z-index: 100;
+//  position: absolute;
+//  height: 50%;
+//  width: 50%;
+//  top: 50%;
+//  left: 50%;
+//  transform: translate(-50%, -50%);
+//  transition: top 850ms ease;
+//  /*white-space: nowrap;*/
+//}
 
 .Typewriter__wrapper{
   white-space:nowrap;
@@ -127,19 +151,19 @@ body{
 
 .clients{
   position: absolute;
-  top: 45%;
+  top: 11%;
   left: 10%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 80%;
-  height: 30%;
+  height: 25%;
   margin: 0 auto;
-
   gap: 0;
   user-select: none;
   -webkit-user-drag: none;
+  z-index: -1;
 
   img{
     height:auto; max-width:100%;
@@ -322,13 +346,13 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
   .cursor-container{
     display: none;
   }
-
-  .mainLogo{
-    top: -5%;
-    left: 5%;
-    width: 90%;
-    height: 80%;
-  }
+  //
+  //.mainLogo{
+  //  top: -5%;
+  //  left: 5%;
+  //  width: 90%;
+  //  height: 80%;
+  //}
 
   .tagLine{
     width: 80%;
@@ -342,5 +366,10 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
     overflow-x: hidden;
 
   }
+}
+
+.test{
+  width: 100%;
+  height: 100%;
 }
 
