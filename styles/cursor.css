@@ -14,21 +14,5 @@
   transform: translate(705px, 316px);
   transition: all 0.05s ease;
 }
-.cursor-container .cursor-wrapper {
-  position: absolute;
-  top: -7.5pt;
-  left: -7.5pt;
-  transform: translate(705px, 316px);
-  width: 15pt;
-  height: 15pt;
-  transition: all 0.1s ease;
-}
-.cursor-container .cursor-wrapper .cursor {
-  width: 15pt;
-  height: 15pt;
-  border: 1pt solid pink;
-  border-radius: 50%;
-  transition: all 150ms linear;
-}
 
 /*# sourceMappingURL=cursor.css.map */
