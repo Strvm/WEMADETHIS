@@ -7,7 +7,6 @@ let isInBullet = false;
 let isInHomePage = true;
 let currentPage = null;
 let swiperInit = false;
-
 /*Hover dots*/
 menuBullets.forEach(function(item) {
     item.addEventListener('mouseover', function(event){
@@ -34,8 +33,12 @@ menuBullets.forEach(function(item) {
             return;
         else
             isInBullet = false;
+
         const bullet = item.children[0];
-       bullet.style.position = 'relative';
+        const name = bullet.children[0].innerHTML;
+        console.log(name, currentPage);
+        if (currentPage === name)return;
+        bullet.style.position = 'relative';
         //bullet.style.left = '0%';
         if (window.innerWidth > 600)bullet.children[0].style.display = 'none';
         bullet.style.width = bullet.style.height = '10px';
@@ -49,9 +52,20 @@ menuBullets.forEach(function(item) {
         item.addEventListener('click', function (event) {
             const menuName = item.children[0].children[0].innerText.toLowerCase();
             if (currentPage != null) {
-                console.log(currentPage);
-                document.querySelector(`.${currentPage}`).classList.remove('visible')
-                document.querySelector(`.${currentPage}`).classList.add('hidden')
+                const temp = currentPage === 'about us' ? 'biographies' : currentPage;
+                menuBullets.forEach(function(item) {
+                    const bullet = item.children[0];
+                    const name = bullet.children[0].innerHTML;
+                    if (name === currentPage) {
+                        bullet.style.position = 'relative';
+                        if (window.innerWidth > 600) bullet.children[0].style.display = 'none';
+                        bullet.style.width = bullet.style.height = '10px';
+                        wrapper.style.height = wrapper.style.width = '15pt';
+                    }
+                });
+                console.log(temp);
+                document.querySelector(`.${temp}`).classList.remove('visible')
+                document.querySelector(`.${temp}`).classList.add('hidden')
             }
 
             switch (menuName) {
@@ -83,7 +97,7 @@ menuBullets.forEach(function(item) {
                 case 'about us':
                     document.querySelector(`.biographies`).classList.remove('hidden');
                     document.querySelector(`.biographies`).classList.add('visible');
-                    currentPage = 'biographies';
+                    currentPage = 'about us';
                     break;
                 case 'contact':
                     document.querySelector(`.${menuName}`).classList.remove('hidden');
