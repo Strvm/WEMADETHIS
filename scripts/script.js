@@ -132,6 +132,13 @@ mainLogo.addEventListener('click', function (e) {
     if (!isInHomePage) {
         threeDcontainer.style.top = parseInt(window.getComputedStyle(threeDcontainer, null).getPropertyValue("top")) + 190 + 'px';
         mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) + 190 + 'px';
+        mainFrame.style.zIndex = '-1';
+        mainFrame.style.width = '50%';
+        mainFrame.style.height = '50%';
+        mainLogo.style.width = "60%";
+        mainLogo.style.height = "40%";
+        mainLogo.style.top = "12.5%";
+        mainLogo.style.left = "17%";
         //document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) + 30 + 'px';
         document.querySelector('.tagLine').classList.remove('hidden');
         document.querySelector('.tagLine').classList.add('visible');

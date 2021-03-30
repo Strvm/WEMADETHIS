@@ -66,7 +66,7 @@ body{
   top: 12.5%;
   left: 17.5%;
   transform: translate(-50%, -50%);
-  transition: width 800ms, height 800ms linear;
+  transition: width 1800ms, height 1800ms linear;
   -webkit-user-drag: none;
 }
 
@@ -197,7 +197,7 @@ body{
   width: 90%;
   margin: 0 auto;
   position: absolute;
-  top: 43%;
+  top: 31%;
 
   p {
     width: 55%;
@@ -209,7 +209,7 @@ body{
 .biographyContainer{
   margin: 0 auto;
   height: 100%;
-  width: 60%;
+  width: 45%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -371,5 +371,9 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
 .test{
   width: 100%;
   height: 100%;
+}
+
+.Typewriter__cursor{
+  color: #fd79a8;
 }
 
