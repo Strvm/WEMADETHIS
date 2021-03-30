@@ -124,7 +124,7 @@ body {
 .menuBullet > p {
   position: absolute;
   left: 180%;
-  top: -185%;
+  top: -160%;
   display: none;
   user-select: none;
 }
@@ -217,7 +217,10 @@ body {
 }
 
 .joshuaBioImage {
-  width: 220px;
+  max-width: 220px;
+  max-height: 275.11px;
+  width: auto;
+  height: auto;
 }
 
 .joshua {
