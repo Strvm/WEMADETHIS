@@ -65,7 +65,7 @@ body{
   width: 60%;
   height: 40%;
   position: absolute;
-  top: 12.5%;
+  top: 2.5%;
   left: 17.5%;
   transform: translate(-50%, -50%);
   transition: width 1800ms, height 1800ms linear;
@@ -319,8 +319,13 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
 
   .menuBullet > p{
     display: inline-block;
+    top: -199%;
   }
-
+  .mainLogo{
+    width: 80%;
+    height: 60%;
+    left: 10.5%;
+  }
   .biographyContainer {
     width: 100%;
     flex-direction: column;
@@ -367,7 +372,7 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
   //}
 
   .tagLine{
-    width: 80%;
+    width: 90vw;
   }
 
   * { cursor: initial; }
@@ -376,7 +381,7 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
     width: 100vw;
     margin:0;
     overflow-x: hidden;
-
+    position: fixed;
   }
 }
 

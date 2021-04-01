@@ -10,6 +10,7 @@ let swiperInit = false;
 /*Hover dots*/
 menuBullets.forEach(function(item) {
     item.addEventListener('mouseover', function(event){
+        if (window.innerWidth < 600)return;
         if (isInBullet)
             return;
         else
@@ -63,7 +64,6 @@ menuBullets.forEach(function(item) {
                         wrapper.style.height = wrapper.style.width = '15pt';
                     }
                 });
-                console.log(temp);
                 document.querySelector(`.${temp}`).classList.remove('visible')
                 document.querySelector(`.${temp}`).classList.add('hidden')
             }
@@ -136,6 +136,7 @@ menuBullets.forEach(function(item) {
 
 
 mainLogo.addEventListener('click', function (e) {
+    console.log('click');
     if (isShifting)return;
     for (let elementNodeListOfElement of document.querySelectorAll('.pageSection')) {
         if (elementNodeListOfElement.classList.contains('visible')){
