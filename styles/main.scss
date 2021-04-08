@@ -377,8 +377,8 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
 
   * { cursor: initial; }
   html, body{
-    height: 100vh;
-    width: 100vw;
+    height: 60vh;
+    width: 60vw;
     margin:0;
     overflow-x: hidden;
     position: fixed;
@@ -386,8 +386,8 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
 }
 
 .test{
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 }
 
 .Typewriter__cursor{
