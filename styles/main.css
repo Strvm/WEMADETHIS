@@ -73,7 +73,7 @@ body {
 }
 
 .swiper-button-prev, .swiper-button-next {
-  color: black;
+  display: none;
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
@@ -88,10 +88,9 @@ body {
   width: 60%;
   height: 40%;
   position: absolute;
-  top: 2.5%;
-  left: 17.5%;
+  top: 30%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  transition: width 1800ms, height 1800ms linear;
   -webkit-user-drag: none;
 }
 
@@ -113,27 +112,41 @@ body {
 
 .menu {
   position: absolute;
-  top: 5%;
-  left: 3%;
+  top: 3%;
+  left: 95%;
 }
 
 .menuBullet {
   position: relative;
   border-radius: 50%;
   background-color: #221F20;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   left: 0%;
   transition: left 180ms ease;
   white-space: nowrap;
+  float: right;
 }
 
 .menuBullet > p {
   position: absolute;
-  left: 180%;
-  top: -155%;
+  top: -192%;
   display: none;
   user-select: none;
+  float: left;
+  font-size: 12px;
+}
+
+.clientBullet {
+  left: -625%;
+}
+
+.aboutUsBullet {
+  left: -675%;
+}
+
+.contactBullet {
+  left: -570%;
 }
 
 .menuTab {
@@ -149,7 +162,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: top 850ms ease;
   /*white-space: nowrap;*/
 }
 
@@ -157,16 +169,16 @@ body {
   white-space: nowrap;
 }
 
-/*Clients*/
-.clients {
+/*projects*/
+.projects {
   position: absolute;
-  top: 11%;
-  left: 10%;
+  top: 9.5%;
+  left: 0%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 100%;
   height: 25%;
   margin: 0 auto;
   gap: 0;
@@ -174,7 +186,7 @@ body {
   -webkit-user-drag: none;
   z-index: -1;
 }
-.clients img {
+.projects img {
   height: auto;
   max-width: 100%;
   position: relative;
@@ -201,18 +213,25 @@ body {
   width: 90%;
   margin: 0 auto;
   position: absolute;
-  top: 31%;
+  top: 20%;
 }
 .biographies p {
   width: 55%;
   display: inline-block;
   margin-top: 0;
 }
+.biographies a {
+  text-decoration: none;
+  margin-bottom: 5px;
+  color: #221F20;
+  user-drag: none;
+  display: block;
+}
 
 .biographyContainer {
   margin: 0 auto;
   height: 100%;
-  width: 45%;
+  width: 34%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -268,7 +287,7 @@ body {
 }
 
 /*Contact*/
-p, h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3, h4, h5, h6, a {
   font-family: "Avenir", sans-serif;
 }
 

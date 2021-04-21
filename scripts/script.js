@@ -16,11 +16,11 @@ menuBullets.forEach(function(item) {
         else
             isInBullet = true;
         const bullet = item.children[0];
-        bullet.style.position = 'absolute';
+       // bullet.style.position = 'absolute';
         //bullet.style.left = '14px';
-        bullet.style.width = bullet.style.height = '12px';
+        //bullet.style.width = bullet.style.height = '10px';
         bullet.children[0].style.display = 'block';
-        wrapper.style.height = wrapper.style.width = '22pt';
+        //wrapper.style.height = wrapper.style.width = '22pt';
         //pointer.classList.remove('visible');
         //pointer.classList.add('hidden');
     });
@@ -42,10 +42,10 @@ menuBullets.forEach(function(item) {
         bullet.style.position = 'relative';
         //bullet.style.left = '0%';
         if (window.innerWidth > 600)bullet.children[0].style.display = 'none';
-        bullet.style.width = bullet.style.height = '10px';
+        //bullet.style.width = bullet.style.height = '8px';
         //document.querySelector('.pointer').classList.remove('hidden')
         //document.querySelector('.pointer').classList.add('visible')
-        wrapper.style.height = wrapper.style.width = '15pt';
+       // wrapper.style.height = wrapper.style.width = '15pt';
     });
 });
 
@@ -60,8 +60,8 @@ menuBullets.forEach(function(item) {
                     if (name === currentPage) {
                         bullet.style.position = 'relative';
                         if (window.innerWidth > 600) bullet.children[0].style.display = 'none';
-                        bullet.style.width = bullet.style.height = '10px';
-                        wrapper.style.height = wrapper.style.width = '15pt';
+                       // bullet.style.width = bullet.style.height = '10px';
+                      //  wrapper.style.height = wrapper.style.width = '15pt';
                     }
                 });
                 document.querySelector(`.${temp}`).classList.remove('visible')
@@ -69,13 +69,18 @@ menuBullets.forEach(function(item) {
             }
 
             switch (menuName) {
-                case 'clients':
-                    document.querySelector('.clients').classList.remove('hidden');
-                    document.querySelector('.clients').classList.add('visible');
-                    currentPage = 'clients';
+                case 'projects':
+                    document.querySelector('.projects').classList.remove('hidden');
+                    document.querySelector('.projects').classList.add('visible');
+                    currentPage = 'projects';
                     if (!swiperInit){
                         // init Swiper:
                         let swiper = new Swiper('.swiper-container', {
+                            loop: true,
+                            direction: 'vertical',
+                            slidesPerView: 1,
+                            spaceBetween: 0,
+                            mousewheel: true,
                             navigation: {
                                 nextEl: '.swiper-button-next',
                                 prevEl: '.swiper-button-prev',
@@ -86,10 +91,10 @@ menuBullets.forEach(function(item) {
                                 clickable: true,
                                 dynamicBullets: true,
                             },
-                            autoplay: {
-                                delay: 2500,
-                                disableOnInteraction: false,
-                            },
+                            // autoplay: {
+                            //     delay: 4000,
+                            //     disableOnInteraction: true,
+                            // },
                         });
                         swiperInit = true;
                     }
@@ -123,16 +128,52 @@ menuBullets.forEach(function(item) {
                 mainFrame.style.zIndex = '100';
                 mainFrame.style.width = '50%';
                 mainFrame.style.height = '50%';
-                mainLogo.style.width = "50%";
-                mainLogo.style.height = "30%";
-                mainLogo.style.top = "9.5%";
-                mainLogo.style.left = "24%";
+                mainLogo.style.width = "40%";
+                mainLogo.style.height = "20%";
+                // mainLogo.style.top = "6.5%";
+                // mainLogo.style.left = "28%";
+                mainLogo.style.top = "17.5%";
+                mainLogo.style.left = "-38%";
                // document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) - 30 + 'px';
                 document.querySelector('.tagLine').classList.add('hidden');
                 isInHomePage = false;
             }
         });
     });
+
+const linkEl = document.querySelectorAll('.email')
+
+linkEl.forEach(function (item) {
+    item.onmousedown = function(downEvent) {
+
+        var clickedEl = downEvent.target;
+        var mouseMoved = false;
+
+        clickedEl.onmousemove = function() {
+
+            // If user clicks then moves, select the whole link
+            window.getSelection().selectAllChildren(clickedEl);
+
+            // Set a flag to prevent opening the link
+            mouseMoved = true;
+
+            // Reset mousemove, else it'll run constantly
+            clickedEl.onmousemove = null;
+
+            // This is only to prevent having the text selection being dragged
+            clickedEl.ondragstart = function(dragEvent) {
+                dragEvent.preventDefault();
+            }
+        }
+
+        if (mouseMoved) {
+            // If mouse has moved, prevent default
+            downEvent.preventDefault();
+        }
+    }
+
+})
+
 
 
 mainLogo.addEventListener('click', function (e) {
@@ -161,9 +202,11 @@ mainLogo.addEventListener('click', function (e) {
         isInHomePage = true;
     }
     for (let menuBullet of menuBullets) {
+            menuBullet.children[0].children[0].style.display = 'none';
             menuBullet.style.opacity = '1';
             menuBullet.classList.add("visible");
     }
+    currentPage = null;
 });
 
 
@@ -194,10 +237,10 @@ const typeWriter = new Typewriter('.tagLine', {
 
 typeWriter
     .pauseFor(1000)
-    .typeString('Art direction and production of video content, graphics, objects, sets, and installations.')
+    .typeString('Art direction and production of video content, objects, sets, and installations.')
     .pauseFor(3000)
     .deleteAll(1)
-    .typeString('Direction artistique et production de vidéos, de contenus graphiques, d\'objets, de décors, et d\'installations.')
+    .typeString('Concepteurs et producteurs de contenu vidéo, d\'objets, de décors, et d\'installations.')
     .pauseFor(3000)
     .start();
 

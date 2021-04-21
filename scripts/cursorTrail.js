@@ -95,7 +95,8 @@ CREDITS
     function Particle() {
 
         // this.character = "wow";
-        this.character = ["w", "o", "w"];
+        //this.character = ["w", "o", "w"];
+        this.character = ["•"];
         this.lifeSpan = 90; //ms
         this.initialStyles ={
             "position": "absolute",
@@ -118,7 +119,7 @@ CREDITS
             this.initialStyles.color = color;
 
             this.element = document.createElement('span');
-            if (wowIndex === 3)wowIndex = 0;
+            if (wowIndex === 1)wowIndex = 0;
             this.element.innerHTML = this.character[wowIndex]
             wowIndex++;
             // if (!wow) {
