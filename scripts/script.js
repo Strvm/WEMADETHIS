@@ -132,8 +132,13 @@ menuBullets.forEach(function(item) {
                 mainLogo.style.height = "20%";
                 // mainLogo.style.top = "6.5%";
                 // mainLogo.style.left = "28%";
-                mainLogo.style.top = "17.5%";
-                mainLogo.style.left = "-38%";
+                if (window.innerWidth > 600) {
+                    mainLogo.style.top = "17.5%";
+                    mainLogo.style.left = "-38%";
+                }else {
+                    mainLogo.style.top = "5.5%";
+                    mainLogo.style.left = "-20%";
+                }
                // document.querySelector('.tagLine').style.top = parseInt(window.getComputedStyle(document.querySelector('.tagLine'), null).getPropertyValue("top")) - 30 + 'px';
                 document.querySelector('.tagLine').classList.add('hidden');
                 isInHomePage = false;
