@@ -408,11 +408,16 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
     position: fixed;
   }
 
-  .mainFrame .mainLogo {
+  .mainLogo {
     width: 80%;
     height: 60%;
     left: 50%;
-    top: 18%;
+    top: 7vh !important;
+  }
+
+  .mainFrame {
+    height: 20%;
+    transform: translate(-50%, -140%);
   }
 }
 

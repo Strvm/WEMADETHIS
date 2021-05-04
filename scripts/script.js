@@ -127,7 +127,7 @@ menuBullets.forEach(function(item) {
                 mainFrame.style.top = parseInt(window.getComputedStyle(mainFrame, null).getPropertyValue("top")) - 190 + 'px';
                 mainFrame.style.zIndex = '100';
                 mainFrame.style.width = '50%';
-                mainFrame.style.height = '50%';
+
                 mainLogo.style.width = "40%";
                 mainLogo.style.height = "20%";
                 // mainLogo.style.top = "6.5%";
@@ -135,6 +135,7 @@ menuBullets.forEach(function(item) {
                 if (window.innerWidth > 600) {
                     mainLogo.style.top = "17.5%";
                     mainLogo.style.left = "-38%";
+                    mainFrame.style.height = '50%';
                 }else {
                     mainLogo.style.top = "6.5%";
                     mainLogo.style.left = "-20%";
