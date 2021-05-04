@@ -343,6 +343,17 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
   font-weight: bolder;
 }
 
+
+
+.test{
+  width: 80%;
+  height: 80%;
+}
+
+.Typewriter__cursor{
+  color: #fd79a8;
+}
+
 /*Responsiveness*/
 
 @media screen and (max-width: 600px) {
@@ -359,13 +370,7 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
   .swiper-container{
     top: -45%;
   }
-  .mainLogo{
-    width: 80%;
-    height: 60%;
-    left: 50%;
-    top: 17%;
 
-  }
   .biographyContainer {
     width: 100%;
     flex-direction: column;
@@ -394,8 +399,6 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
   }
   .Typewriter__wrapper{
     white-space: normal;
-
-
   }
 
   .biographies p{
@@ -426,14 +429,12 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
     overflow-x: hidden;
     position: fixed;
   }
-}
 
-.test{
-  width: 80%;
-  height: 80%;
-}
-
-.Typewriter__cursor{
-  color: #fd79a8;
+  .mainFrame .mainLogo{
+    width: 80%;
+    height: 60%;
+    left: 50%;
+    top: 18%;
+  }
 }
 
