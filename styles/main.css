@@ -339,6 +339,7 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
     width: 80%;
     height: 60%;
     left: 50%;
+    top: 17%;
   }
 
   .biographyContainer {
@@ -353,6 +354,20 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
 
   .swiper-button-next, .swiper-button-prev {
     opacity: 0.1;
+  }
+
+  .test {
+    content: url("../images/svgPhone/TEMPLATE_WMT_PHONE_CAKES-01.svg");
+    width: 340px;
+    height: 700px;
+  }
+
+  .client {
+    margin-top: 140px;
+  }
+
+  .swiper-container {
+    height: 400%;
   }
 
   .Typewriter__wrapper {
