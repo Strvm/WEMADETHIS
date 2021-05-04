@@ -206,6 +206,8 @@ body{
   /*border-radius: 50%;*/
   /*background-color: blue;*/
   text-align: center;
+  width: 80%;
+  height: 80%;
 }
 
 .france2{
@@ -346,8 +348,7 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
 
 
 .test{
-  width: 80%;
-  height: 80%;
+  display: none;
 }
 
 .Typewriter__cursor{
@@ -384,16 +385,19 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
   .swiper-button-next, .swiper-button-prev{
     opacity: 0.1;
   }
+  //.test{
+  //  content: url("../images/svgPhone/TEMPLATE_WMT_PHONE_CAKES-01.svg");
+  //  width: 340px;
+  //  height: 700px;
+  //}
+
+
+
   .test{
-    content: url("../images/svgPhone/TEMPLATE_WMT_PHONE_CAKES-01.svg");
-    width: 340px;
-    height: 700px;
+    display: block;
+    width: 80%;
+    height: 80%;
   }
-
-  .client{
-    margin-top: 140px;
-  }
-
   .swiper-container{
     height: 400%;
   }

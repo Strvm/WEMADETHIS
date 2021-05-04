@@ -3,10 +3,81 @@ const menuBullets = [...document.querySelectorAll('.menuTab')];
 const mainFrame = document.querySelector('.mainFrame');
 const pointer = document.querySelector('.pointer');
 const wrapper = document.querySelector('.cursor');
+const pcClients = [
+    './images/svgs2/01_TEMPLATE_WMT_WEB_CAKES-01.svg',
+    './images/svgs2/02_TEMPLATE_WMT_WEB_MAQUETTES-01.svg',
+    './images/svgs2/03_TEMPLATE_WMT_WEB_MAISONVIVANTE-01.svg',
+    './images/svgs2/04_TEMPLATE_WMT_WEB_CAHU2-01.svg',
+    './images/svgs2/05_TEMPLATE_WMT_WEB_PUIFORCAT-01 2.svg',
+    './images/svgs2/06_TEMPLATE_WMT_WEB_LGJ-01.svg',
+    './images/svgs2/07_TEMPLATE_WMT_WEB_MANOR-01_1.svg',
+    './images/svgs2/08_TEMPLATE_WMT_WEB_PASSAGE-01.svg',
+    './images/svgs2/09_TEMPLATE_WMT_WEB_ANIMAUX-01_1.svg',
+    './images/svgs2/10_TEMPLATE_WMT_WEB_HIPPO-01 2.svg',
+    './images/svgs2/11_TEMPLATE_WMT_WEB_PATOU-01 2.svg',
+    './images/svgs2/12_TEMPLATE_WMT_WEB_HERMESNOEL-01 2.svg',
+    './images/svgs2/13_TEMPLATE_WMT_WEB_HABITS-01.svg',
+    './images/svgs2/14_TEMPLATE_WMT_WEB_SEMCOM-01 2.svg',
+    './images/svgs2/15_TEMPLATE_WMT_WEB_BACKROOM-01.svg',
+    './images/svgs2/16_2_TEMPLATE_WMT_WEB_CAHU-01.svg',
+    './images/svgs2/17_TEMPLATE_WMT_WEB_VICTOIRES-01.svg',
+    './images/svgs2/18_TEMPLATE_WMT_WEB_WESTFIELD-01 2.svg',
+]
+
+const pcEl = [];
+const phoneClients = [
+    './images/svgPhone/TEMPLATE_WMT_PHONE_CAKES-01.svg',
+    './images/svgPhone/TEMPLATE_WMT_PHONE_CAKES-02.svg',
+    './images/svgPhone/TEMPLATE_WMT_PHONE_CAKES-03.svg',
+]
 let isInBullet = false;
 let isInHomePage = true;
 let currentPage = null;
 let swiperInit = false;
+let swiper = null;
+const swiperWrapper = document.querySelector(".swiper-wrapper");
+
+
+
+if (window.innerWidth > '600') {
+    for (let pcClient of pcClients) {
+        const slide = document.createElement('div');
+        slide.classList.add("swiper-slide");
+
+        const client = document.createElement('div');
+        client.classList.add("client");
+
+        const img = document.createElement('img');
+        img.src = pcClient;
+
+        client.appendChild(img);
+        slide.appendChild(client);
+        swiperWrapper.appendChild(slide);
+        pcEl.push(slide);
+    }
+}else {
+    for (let pcClient of phoneClients) {
+        const slide = document.createElement('div');
+        slide.classList.add("swiper-slide");
+
+        const client = document.createElement('div');
+        client.classList.add("client");
+
+        const img = document.createElement('img');
+        img.src = pcClient;
+
+        client.appendChild(img);
+        slide.appendChild(client);
+        swiperWrapper.appendChild(slide);
+        pcEl.push(slide);
+    }
+}
+
+document.addEventListener('click', ev => {
+    if (swiper !== null){
+        swiper.update();
+    }
+})
 /*Hover dots*/
 menuBullets.forEach(function(item) {
     item.addEventListener('mouseover', function(event){
@@ -75,7 +146,7 @@ menuBullets.forEach(function(item) {
                     currentPage = 'projects';
                     if (!swiperInit){
                         // init Swiper:
-                        let swiper = new Swiper('.swiper-container', {
+                        swiper = new Swiper('.swiper-container', {
                             loop: true,
                             direction: 'vertical',
                             slidesPerView: 1,
